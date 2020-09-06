@@ -12,8 +12,7 @@
     border: 1px solid grey;
     margin-top: 5px;
     margin-left: 2px;
-    
-    
+
 }
 
 .issue-states {
@@ -28,7 +27,7 @@
 }
 
 #btnCreateIssue{
-    margin-left: 35vw;
+    margin-left: 50vw;
 }
 
 span {
@@ -42,7 +41,7 @@ span {
     align-self: center;
     width: 23vw;
     margin: 3px;
-    
+  
 }
 
 .login-container{
@@ -50,4 +49,16 @@ span {
        
   }
 
+
+a{
+    color: white;
+    float: right;
+    font-size: large;
+    font-family: cursive;
+    
+}
+
+a:hover{
+    text-decoration: none;
+}
 
