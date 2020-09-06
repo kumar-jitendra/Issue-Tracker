@@ -11,20 +11,36 @@ router.get('/', (req, res) => {
 
 router.post('/api/login', async (req, res) => {
     const user = new User({
-        
         userName: req.body.user,
         empCode: req.body.empcode
     });
-   
+
     try {
-        const currentuser = await user.save();
-        // const allTickets = await Ticket.find();
-          
-        // console.log(document.cookie)
-         res.redirect('/dashboard');
+        const allUsers = await User.find();
+        let flag = false;
+
+        allUsers.forEach(e => {
+            if (e.empCode == req.body.empcode) {
+                flag = true;
+            }
+        });
+
+        if (!flag) {
+            await user.save((error, result) => {
+                if (error) {
+                    console.log(error);
+                }
+                else {
+                    console.log(result);
+                }
+            });
+        }
+
+        //  console.log(allUsers);
+        res.redirect('/dashboard');
         // res.render('dashboard', { allTickets: allTickets, userName : req.body.user });
-        console.log(currentuser);
-    
+
+
     } catch (error) {
         res.send(error);
     }
