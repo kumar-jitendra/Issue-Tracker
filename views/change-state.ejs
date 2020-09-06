@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/api/change-state" method="POST">
+
+        <div class="form-group">
+
+            <label for="exampleFormControlSelect1">Select state</label>
+            <select class="form-control" name="curstate">
+                <option>Not Started</option>
+                <option>In Progress</option>
+                <option>Resolved</option>
+                <option id="doneid">Done</option>
+            </select>
+
+            <input type="text" name="_id" placeholder="defid">
+        </div>
+        <button type="submit">Change State</button>
+    </form>
+
+</body>
+        
+</html>

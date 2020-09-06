@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket</title>
+</head>
+
+<body>
+
+    <form action="/api/create-ticket" , method="POST">
+
+        <div class="form-group">
+            <label for="inputName">Ticket id</label>
+            <input type="text" class="form-control" name="ticketid" placeholder="ticket">
+        </div>
+
+        <div class="form-group">
+            <label for="inputName">Your Name</label>
+            <input type="text" class="form-control" name="devname" placeholder="Jitendra Kumar">
+        </div>
+
+        <div class="form-group">
+            <label for="inputTitle">Issue Title</label>
+            <input type="text" class="form-control" name="inputTitle" placeholder="Issue Tracker">
+        </div>
+
+        <div class="form-group">
+            <label for="inputDescription">Description</label>
+            <input type="text" class="form-control" name="inputDescription"
+                placeholder="It is used to track the issues assigned to particular developer.">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Issue</button>
+    </form>
+
+</body>
+
+</html>

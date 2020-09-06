@@ -1,0 +1,52 @@
+.main-container {
+    
+    display: flex;
+}
+
+.issue-container {
+    display: flex;
+    background: rgb(231, 231, 231);
+    flex-direction: column;
+    width: 24.5vw;
+    flex-wrap: wrap;
+    border: 1px solid grey;
+    margin-top: 5px;
+    margin-left: 2px;
+    
+}
+
+.issue-states {
+    border: grey solid 1.5px;
+    background-color: grey;
+    padding: 5px;
+}
+
+#issue-title {
+    font-style: italic;
+   
+}
+
+#btnCreateIssue{
+    margin-left: 35vw;
+}
+
+span {
+    margin: auto;
+    color: white;
+    font-size: 1.15rem;
+    /* margin-right: 20px; */
+}
+
+.card{
+    align-self: center;
+    width: 23vw;
+    margin: 3px;
+    
+}
+
+.login-container{
+       border: 1px solid gray;
+       
+  }
+
+

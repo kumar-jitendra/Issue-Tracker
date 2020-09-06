@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <form action="/api/login" method="POST">
+    
+            <label for="exampleFormControlSelect1">Who are you ?</label>
+            <select class="form-control" name="user">
+                <option>QA</option>
+                <option>Developer</option>
+             </select>   
+    
+            <div class="form-group">
+                <label for="empcode">Employee code </label>
+                <input type="text" class="form-control" name="empcode" placeholder="Employee code">
+            </div>
+    
+            <button type="submit">Log in </button>
+        </form>
+    </div>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navBar">
+
+        <a class="navbar-brand" href="#">Issue Tracker</a>
+        <a href="/api/create-ticket" id="createid">Create Issue</a>
+
+    </nav>
+
+    <div class="main-container">
+        <div class="issue-container" id="not-started">
+            <div class="issue-states">
+                <span>Not started</span>
+            </div>
+
+            <% const notStarted = allTickets.filter(e => e.status === 1) %>
+            <% notStarted.forEach(e1 => { %>
+
+            <div class="card">
+                <div class="card-body">
+                   
+                    <h3><%= e1._id %></h3>
+                    <h4><%= e1.status %></h4>
+                    <h4><%= e1.ticketid %></h4>
+                    <h5 class="card-title"><%= e1.devname %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= e1.title %></h6>
+                    <p class="card-text"><%= e1.desc %></p>
+                    <a href="/api/change-state">change state</a>
+                </div>
+            </div>
+
+            <%  }) %>
+
+        </div>
+
+        <div class="issue-container" id="in-progress">
+            <div class="issue-states">
+                <span>In progress</span>
+
+            </div>
+            <% const inprogress = allTickets.filter(e => e.status === 2) %>
+
+            <% inprogress.forEach(e2 => { %>
+            <div class="card">
+                <div class="card-body">
+                    <h3><%= e2._id %></h3>
+                    <h4><%= e2.status %></h4>
+                    <h4><%= e2.ticketid %></h4>
+                    <h5 class="card-title"><%= e2.devname %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= e2.title %></h6>
+                    <p class="card-text"><%= e2.desc %></p>
+                    <a href="/api/change-state">change state</a>
+                </div>
+            </div>
+
+            <%  }) %>
+
+
+
+        </div>
+
+        <div class="issue-container" id="resolved">
+            <div class="issue-states">
+                <span>Resolved</span>
+
+            </div>
+
+            <% const resolved = allTickets.filter(e => e.status === 3)%>
+
+            <% resolved.forEach(e3 => { %>
+            <div class="card">
+                <div class="card-body">
+                    <h3><%= e3._id %></h3>
+                    <h4><%= e3.status %></h4>
+                    <h4><%= e3.ticketid %></h4>
+                    <h5 class="card-title"><%= e3.devname %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= e3.title %></h6>
+                    <p class="card-text"><%= e3.desc %></p>
+                    <a href="/api/change-state">change state</a>
+                </div>
+            </div>
+
+            <%  }) %>
+
+
+        </div>
+        <div class="issue-container" id="done">
+            <div class="issue-states">
+                <span>Done</span>
+            </div>
+
+            <% const done = allTickets.filter(e => e.status === 4)%>
+
+            <% done.forEach(e4 => { %>
+            <div class="card">
+                <div class="card-body">
+                    <h3><%= e4._id %></h3>
+                    <h4><%= e4.status %></h4>
+                    <h4><%= e4.ticketid %></h4>
+                    <h5 class="card-title"><%= e4.devname %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= e4.title %></h6>
+                    <p class="card-text"><%= e4.desc %></p>
+                    <a href="/api/change-state">change state</a>
+                </div>
+            </div>
+
+            <%  }) %>
+
+        </div>
+
+</body>
+
+</html>
