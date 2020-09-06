@@ -3,18 +3,15 @@ const router = express.Router();
 const Ticket = require('../models/ticket_model');
 const { route } = require('./login');
 
-router.get('/api/change-state', (req, res) => {
-
-    res.render('change-state');
-});
 
 router.get('/api/change-state/:id', (req, res) => {
-     
-    res.render('change-state', req.params.id);
+
+    res.render('change-state', { _id: req.params.id });
+
 });
 
 router.post('/api/change-state', (req, res) => {
-    const defaultid = req.body._id;
+    const defaultid = req.body.defid;
     const state = req.body.curstate;
     let ticketstatus = 1;
 

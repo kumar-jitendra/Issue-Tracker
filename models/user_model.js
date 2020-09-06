@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
 
     empCode: {
         type: Number,
-        required:true
+        required:true,
+        unique: true
     },
     
 });

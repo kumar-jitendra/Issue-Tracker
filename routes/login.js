@@ -8,23 +8,23 @@ router.get('/', (req, res) => {
     res.render('login');
 });
 
+
 router.post('/api/login', async (req, res) => {
     const user = new User({
         
         userName: req.body.user,
         empCode: req.body.empcode
     });
-
+   
     try {
         const currentuser = await user.save();
-        const allTickets = await Ticket.find();
-    
-        //  res.send(allTickets);
-        //res.redirect('/dashboard');
-        res.render('dashboard', { allTickets: allTickets, empCode : req.body.empcode });
+        // const allTickets = await Ticket.find();
+          
+        // console.log(document.cookie)
+         res.redirect('/dashboard');
+        // res.render('dashboard', { allTickets: allTickets, userName : req.body.user });
         console.log(currentuser);
-        
-
+    
     } catch (error) {
         res.send(error);
     }

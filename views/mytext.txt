@@ -1,0 +1,6 @@
+  <!-- <% if(userName != null &&  userName === 'QA'){ %>
+        <a href="/api/create-ticket" id="createid">Create Issue</a>
+        <p style="color: white; float: right;">Welcome, <%= userName %></p>
+        <%}else{ %>
+        <p style="color: white; float: right;">Welcome, Developer</p>
+        <% } %> -->
