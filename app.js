@@ -1,6 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const router = require('./routes/dashboard');
 
 
 // SETTING MONGODB CONNECTION
@@ -32,6 +33,7 @@ app.use('/', require('./routes/dashboard'));
 app.use('/', require('./routes/login'));
 app.use('/', require('./routes/ticket'));
 app.use('/', require('./routes/change-state'));
+app.use('/', require('./routes/change-to-done'));
 
 
 // LISTENING ON PORT 80

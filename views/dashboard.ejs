@@ -44,8 +44,9 @@
                     <h6>ticket id : <%= e1.ticketid %></h6>
                     <!-- <h6><%= e1._id %></h6>
                     <h6><%= e1.status %></h6> -->
-
+                    <% if(loggedInUser.curuser !== "QA"){ %>
                     <a href="/api/change-state/<%= e1._id %>">change state</a>
+                    <% } %>
                 </div>
             </div>
 
@@ -70,8 +71,9 @@
                     <h6>ticket id : <%= e2.ticketid %></h6>
                     <!-- <h6><%= e2._id %></h6>
                     <h6><%= e2.status %></h6> -->
-
+                    <% if(loggedInUser.curuser !== "QA"){ %>
                     <a href="/api/change-state/<%= e2._id %>">change state</a>
+                    <% } %>
                 </div>
             </div>
 
@@ -97,8 +99,10 @@
                     <h6>ticket id : <%= e3.ticketid %></h6>
                     <!-- <h6><%= e3._id %></h6>
                     <h6><%= e3.status %></h6> -->
-                    <% if(loggedInUser.curuser === "QA"){ %>
+                    <% if(loggedInUser.curuser !== "QA"){ %>
                     <a href="/api/change-state/<%= e3._id %>">change state</a>
+                    <% }else { %>
+                    <a href="/api/change-to-done/<%= e3._id %>">Change to Done</a>
                     <% } %>
                 </div>
             </div>
@@ -109,7 +113,7 @@
         </div>
         <div class="issue-container" id="done">
             <div class="issue-states">
-                <span>Done</span>
+                <span>Done (History)</span>
             </div>
 
             <% const done = allTickets.filter(e => e.status === 4)%>
@@ -123,7 +127,8 @@
                     <h6>ticket id : <%= e4.ticketid %></h6>
                     <!-- <h6><%= e4._id %></h6>
                     <h6><%= e4.status %></h6> -->
-                    <a href="/api/change-state/<%= e4._id %>">change state</a>
+
+                    <!-- <a href="/api/change-state/<%= e4._id %>">change state</a> -->
                 </div>
             </div>
 

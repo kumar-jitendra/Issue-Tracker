@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Ticket = require('../models/ticket_model');
+// const push = require('push.js');
 
 // CREATE TICKET ROUTE SETUP
 router.get('/api/create-ticket', (req, res) => {
@@ -16,9 +17,11 @@ router.post('/api/create-ticket', async (req, res) => {
         desc: req.body.inputDescription
     });
     console.log(ticket);
+    
     try {
         const allTickets = await ticket.save();
-        console.log(allTickets);
+        // console.log(allTickets);
+      
         res.redirect('/dashboard');
     } catch (err) {
         res.send("error")
